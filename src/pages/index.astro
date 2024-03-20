@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Story from '../components/Story.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<Layout title="Scarlett & Brandon">
+	<main>
+		<Hero
+			subtitle='Nuestra Boda'
+			title='Adriana & Brandon'
+		></Hero>
+		<Story
+			title="Nuestra Historia"
+			body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea neque odit eos eligendi maxime soluta voluptatibus. Et animi perferendis nisi asperiores magnam ipsam sed, autem voluptas, adipisci deleniti necessitatibus accusantium."
+		></Story>
+	</main>
+</Layout>
+
+<style>
+	main {
+
+		max-width: calc(100% - 2rem);
+		color: black;
+		font-size: 20px;
+	}
+</style>
