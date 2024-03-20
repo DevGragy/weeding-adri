@@ -1,23 +1,41 @@
 ---
 interface Props {
-    title: string;
-    body: string;
+  title: string;
+  body: string;
 }
 
 const { title, body } = Astro.props;
 ---
 
 <div class="container-half">
-    <h2>{title}</h2>
-    <p>{body}</p>
+  <h3>{title}</h3>
+  <h2><span>&#10084;</span></h2>
+  <p>{body}</p>
 </div>
 
 <style>
-    .container-half {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
+  .container-half {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 120px auto;
+    padding: 1rem;
+    width: 100%;
+    font-family: "Arsenal", sans-serif;
+    font-weight: 400;
+  }
+  .container-half h2 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+  }
+
+  h2 span {
+    background: #fff;
+    padding: 0 10px;
+  }
 </style>

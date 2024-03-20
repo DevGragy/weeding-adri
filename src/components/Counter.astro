@@ -1,0 +1,113 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<div class="container-half">
+  <h2>{title}</h2>
+  <div id="countdown">
+    <div>
+      <span id="dias"></span>
+      <div class="smalltext">Días</div>
+    </div>
+    <div>
+      <span id="horas"></span>
+      <div class="smalltext">Horas</div>
+    </div>
+    <div>
+      <span id="minutos"></span>
+      <div class="smalltext">Minutos</div>
+    </div>
+    <div>
+      <span id="segundos"></span>
+      <div class="smalltext">Segundos</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function countdown() {
+    const targetDate = new Date("2024-07-13 21:00:00").getTime();
+    // const targetDate = new Date("2024-03-20 14:50:00").getTime();
+    const date = new Date().getTime();
+    const timeLeft = targetDate - date;
+
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor(
+      (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+    const daysHTML: any = document.getElementById("dias");
+    const hoursHTML: any = document.getElementById("horas");
+    const minutesHTML: any = document.getElementById("minutos");
+    const secondsHTML: any = document.getElementById("segundos");
+
+    if (timeLeft <= 0) {
+      daysHTML.innerHTML = "0";
+      hoursHTML.innerHTML = "0";
+      minutesHTML.innerHTML = "0";
+      secondsHTML.innerHTML = "0";
+    } else {
+      daysHTML.innerHTML = days;
+      hoursHTML.innerHTML = hours;
+      minutesHTML.innerHTML = minutes;
+      secondsHTML.innerHTML = seconds;
+    }
+
+    console.log("timeLeft", timeLeft);
+    console.log("date", date);
+  }
+
+  setInterval(countdown, 1000);
+</script>
+
+<style>
+  .container-half {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 120px auto;
+    padding: 1rem;
+    width: 100%;
+    font-family: "Arsenal", sans-serif;
+    font-weight: 400;
+    /* background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%); */
+    background-image: url("../images/hearts-01.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+  #countdown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #countdown div {
+    text-align: center;
+    margin: 0 20px;
+  }
+
+  #countdown div:last-child {
+    margin: 0;
+  }
+
+  #countdown span {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+  }
+
+  .smalltext {
+    color: #666;
+    margin-left: 0;
+  }
+</style>

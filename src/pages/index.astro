@@ -1,27 +1,36 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Story from '../components/Story.astro';
-import Hero from '../components/Hero.astro';
+import Layout from "../layouts/Layout.astro";
+import Story from "../components/Story.astro";
+import Hero from "../components/Hero.astro";
+import WeedingEvents from "../components/WeedingEvents.astro";
+import Counter from '../components/Counter.astro';
 ---
 
 <Layout title="Scarlett & Brandon">
-	<main>
-		<Hero
-			subtitle='Nuestra Boda'
-			title='Adriana & Brandon'
-		></Hero>
-		<Story
-			title="Nuestra Historia"
-			body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea neque odit eos eligendi maxime soluta voluptatibus. Et animi perferendis nisi asperiores magnam ipsam sed, autem voluptas, adipisci deleniti necessitatibus accusantium."
-		></Story>
-	</main>
+  <main>
+    <Hero subtitle="Nuestra Boda" title="Adriana & Brandon" />
+    <Story
+      title="Nuestra Historia"
+      body="Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea neque odit eos eligendi maxime soluta voluptatibus. Et animi perferendis nisi asperiores magnam ipsam sed, autem voluptas, adipisci deleniti necessitatibus accusantium."
+    />
+	<WeedingEvents
+		title="Adriana & Brandon"
+		subtitle="Acompañanos a celebrar nuestra boda"
+		mainImage="src/images/ba-01-min.jpg"
+		celebration="Se celebrara el dia"
+		date="13 | JULIO | 2024"
+		start="Comienza a las 9pm"
+		location="Pachuca, HGO"
+	/>
+	<Counter
+		title="¡No te lo pierdas!"
+	/>
+  </main>
 </Layout>
 
 <style>
-	main {
-
-		max-width: calc(100% - 2rem);
-		color: black;
-		font-size: 20px;
-	}
+  main {
+    max-width: calc(100% - 2rem);
+    color: black;
+  }
 </style>

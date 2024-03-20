@@ -1,49 +1,42 @@
 ---
 interface Props {
-    title: string;
-    subtitle: string;
+  title: string;
+  subtitle: string;
 }
 
 const { title, subtitle } = Astro.props;
 ---
 
 <div class="container">
-
-    <h2>{subtitle}</h2>
-    <h1>{title}</h1>
+  <h2>{subtitle}</h2>
+  <h1>{title}</h1>
 </div>
 
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Meie+Script&family=Playball&family=Quicksand:wght@300..700&family=Roboto:wght@300;400;700&display=swap');
-
-    .container {
-        height: 100vh;
-        width: 100%;
-        margin: auto;
-		padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        color: black;
-    }
-    .container h1 {
-        font-family: "Playball", cursive;
-        font-weight: 400;
-        margin-top: 0;
-    }
-    .container h2 {
-        font-family: "Quicksand", sans-serif;
-        font-weight: 400;
-        display: grid;
-        grid-template-columns: 1fr auto 1fr;
-        gap: 1rem;
-    }
-    .container h2::before,
-    h2::after {
-        content: "";
-        border-top: 0.1rem double black;
-        align-self: center;
-    }
+  .container {
+    height: 100vh;
+    width: 100%;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background-image: url("../images/ba-02-min.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+  }
+  .container h1 {
+    font-family: "Playball", cursive;
+    font-weight: 400;
+    margin-top: 0;
+  }
+  .container h2 {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 400;
+  }
 </style>
