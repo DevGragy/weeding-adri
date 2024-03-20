@@ -64,14 +64,19 @@ const { title } = Astro.props;
 </script>
 
 <style>
+  @media (max-width: 767px) {
+    .container-half {
+      background-attachment: initial;
+    }
+  }
   .container-half {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin: 120px auto;
-    padding: 1rem;
+    margin: 0 auto;
+    padding: 100px 1rem;
     width: 100%;
     font-family: "Arsenal", sans-serif;
     font-weight: 400;
