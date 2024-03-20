@@ -58,9 +58,6 @@ const { title } = Astro.props;
       minutesHTML.innerHTML = minutes;
       secondsHTML.innerHTML = seconds;
     }
-
-    console.log("timeLeft", timeLeft);
-    console.log("date", date);
   }
 
   setInterval(countdown, 1000);
@@ -79,7 +76,7 @@ const { title } = Astro.props;
     font-family: "Arsenal", sans-serif;
     font-weight: 400;
     /* background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%); */
-    background-image: url("../images/hearts-01.jpg");
+    background-image: url("/images/hearts-01.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;

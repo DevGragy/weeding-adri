@@ -1,21 +1,26 @@
 ---
+import { Image } from "astro:assets";
+import BA from "../images/ba-01-min.jpg";
+
 interface Props {
   title: string;
   subtitle: string;
-  mainImage: string;
   celebration: string;
   date: string;
   start: string;
   location: string;
 }
 
-const { title, subtitle, mainImage, celebration, date, start, location } =
-  Astro.props;
+const { title, subtitle, celebration, date, start, location } = Astro.props;
 ---
 
 <div class="container">
   <div>
-    <img src="./src/images/ba-01-min.jpg" alt={title} />
+    <img
+      src="/images/ba-01-min.jpg"
+      alt={title}
+      class="image-bg"
+    />
   </div>
   <div>
     <h3>{subtitle.toUpperCase()}</h3>
@@ -43,7 +48,7 @@ const { title, subtitle, mainImage, celebration, date, start, location } =
     font-weight: 400;
     font-style: normal;
   }
-  .container img {
+  .image-bg {
     width: 100%;
   }
   .container h2 {
@@ -55,10 +60,10 @@ const { title, subtitle, mainImage, celebration, date, start, location } =
 
   @media only screen and (min-width: 768px) {
     .container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
     }
-    .container img {
+    .image-bg {
     max-width: 350px;
   }
   }
