@@ -10,6 +10,8 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@fontsource-variable/montserrat": "^5.0.18",
+    "@fontsource/playball": "^5.0.19",
     "astro": "^4.5.8",
     "astro-seo": "^0.8.3"
   }

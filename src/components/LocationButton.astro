@@ -1,4 +1,7 @@
 ---
+import '@fontsource/playball';
+import '@fontsource-variable/montserrat';
+
 interface Props {
   href: string;
   type: string;
@@ -26,6 +29,8 @@ const { href, type, content } = Astro.props;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
     margin-top: 48px;
+    font-family: 'Montserrat Variable', sans-serif;
+    font-weight: 500;
   }
   .weeding {
     background-color: #fcf8e3;

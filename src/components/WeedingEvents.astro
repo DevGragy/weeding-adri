@@ -1,5 +1,7 @@
 ---
 import LocationButton from "./LocationButton.astro";
+import '@fontsource/playball';
+import '@fontsource-variable/montserrat';
 
 interface Props {
   title: string;
@@ -19,7 +21,7 @@ const { title, subtitle, celebration, date, start, location } = Astro.props;
   </div>
   <div>
     <h3>{subtitle.toUpperCase()}</h3>
-    <h2 class="mt-null">{title}</h2>
+    <h2 class="couple">{title}</h2>
     <h3>{celebration.toUpperCase()}</h3>
     <h2>{date}</h2>
     <h3>{start.toUpperCase()}</h3>
@@ -43,19 +45,23 @@ const { title, subtitle, celebration, date, start, location } = Astro.props;
     justify-content: center;
     text-align: center;
     color: black;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
+    font-family: 'Montserrat Variable', sans-serif;
+    font-weight: 300;
   }
   .image-bg {
     width: 100%;
   }
   .container h2 {
     font-size: 36px;
+    margin: 42px 0;
   }
-  .mt-null {
-    margin-top: 0;
-    font-family: "Playball", sans-serif;
-    font-weight: 400;
+  .container h3 {
+    font-family: 'Montserrat Variable', sans-serif;
+    font-weight: 300;
+  }
+  .couple {
+    font-family: 'Playball', system-ui;
+    margin: 24px 0;
   }
 
   @media only screen and (min-width: 768px) {
