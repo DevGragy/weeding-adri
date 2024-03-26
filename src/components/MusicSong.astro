@@ -8,4 +8,9 @@
     music.volume = 0.1;
   };
   document.addEventListener("DOMContentLoaded", changeVolume);
+
+  window.addEventListener('touchstart', () => {
+    document.getElementById('song').muted = false
+    document.getElementById('song').play()
+  })
 </script>
