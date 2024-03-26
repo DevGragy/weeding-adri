@@ -1,0 +1,11 @@
+<audio autoplay loop id="song">
+  <source src="/audio/Creo_en_ti.mp3" type="audio/mpeg" />
+</audio>
+
+<script>
+  const changeVolume = () => {
+    const music:any = document.getElementById("song");
+    music.volume = 0.1;
+  };
+  document.addEventListener("DOMContentLoaded", changeVolume);
+</script>
