@@ -8,8 +8,10 @@ const { title, subtitle } = Astro.props;
 ---
 
 <div class="container">
-  <h2>{subtitle}</h2>
-  <h1>{title}</h1>
+  <div class="text-container">
+    <h2>{subtitle}</h2>
+    <h1>{title}</h1>
+  </div>
 </div>
 
 <style>
@@ -29,9 +31,8 @@ const { title, subtitle } = Astro.props;
     justify-content: center;
     text-align: center;
     color: white;
-    background-image: url("/images/ba-02-min.jpg");
+    background-image: url("/images/ba_01_min.jpg");
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center;
     background-size: cover;
   }
@@ -43,5 +44,8 @@ const { title, subtitle } = Astro.props;
   .container h2 {
     font-family: "Quicksand", sans-serif;
     font-weight: 400;
+  }
+  .text-container {
+    margin-bottom: 120px;
   }
 </style>
