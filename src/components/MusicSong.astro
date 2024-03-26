@@ -3,15 +3,24 @@
 </audio>
 
 <script>
+  const music: any = document.getElementById("song");
+
   const changeVolume = () => {
-    const music:any = document.getElementById("song");
     music.volume = 0.1;
   };
+
   document.addEventListener("DOMContentLoaded", changeVolume);
 
-  window.addEventListener('touchstart', () => {
-    document.getElementById('song').muted = false
-    document.getElementById('song').play()
-    document.getElementById('song').volume = 0.1;
-  })
+  window.addEventListener("touchstart", () => {
+    music.muted = false;
+    music.play();
+  });
+
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      music.pause();
+    } else {
+      music.play();
+    }
+  });
 </script>
