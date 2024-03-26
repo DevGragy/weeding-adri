@@ -1,4 +1,6 @@
 ---
+import LocationButton from "./LocationButton.astro";
+
 interface Props {
   title: string;
   subtitle: string;
@@ -13,11 +15,7 @@ const { title, subtitle, celebration, date, start, location } = Astro.props;
 
 <div class="container">
   <div>
-    <img
-      src="/images/ba_02_min.jpg"
-      alt={title}
-      class="image-bg"
-    />
+    <img src="/images/ba_02_min.jpg" alt={title} class="image-bg" />
   </div>
   <div>
     <h3>{subtitle.toUpperCase()}</h3>
@@ -26,6 +24,11 @@ const { title, subtitle, celebration, date, start, location } = Astro.props;
     <h2>{date}</h2>
     <h3>{start.toUpperCase()}</h3>
     <h3>{location.toUpperCase()}</h3>
+    <LocationButton
+      href="https://maps.app.goo.gl/8CGmwwiiaHYQ8VKS7"
+      type="weeding"
+      content="Ver la ubicación del evento"
+    />
   </div>
 </div>
 
@@ -41,18 +44,19 @@ const { title, subtitle, celebration, date, start, location } = Astro.props;
     justify-content: center;
     text-align: center;
     color: black;
-    font-family: "Arsenal", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    font-style: normal;
   }
   .image-bg {
     width: 100%;
   }
   .container h2 {
-    font-size: 40px;
+    font-size: 36px;
   }
   .mt-null {
     margin-top: 0;
+    font-family: "Playball", sans-serif;
+    font-weight: 400;
   }
 
   @media only screen and (min-width: 768px) {
@@ -61,7 +65,7 @@ const { title, subtitle, celebration, date, start, location } = Astro.props;
       grid-template-columns: 1fr 1fr;
     }
     .image-bg {
-    max-width: 350px;
-  }
+      max-width: 350px;
+    }
   }
 </style>

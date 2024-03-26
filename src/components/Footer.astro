@@ -1,0 +1,19 @@
+<footer>
+  Desarrollado por DevJayMx - &copy; <span id="year"></span>
+</footer>
+
+<style>
+  footer {
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    padding: 12px 1rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+  }
+</style>
+
+<script>
+  const year: any = document.getElementById("year");
+  year.innerHTML = new Date().getFullYear();
+</script>

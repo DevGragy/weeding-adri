@@ -73,13 +73,16 @@ const { title } = Astro.props;
     margin: 60px auto;
     padding: 100px 1rem;
     width: 100%;
-    font-family: "Arsenal", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
-    /* background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%); */
-    /* background-image: linear-gradient(to top, #fddb92 0%, #d1fdff 100%); */
-    /* background-image: linear-gradient(to top, #9890e3 0%, #b1f4cf 100%); */
-    /* background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%); */
-    background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+    /* background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%); */
+    background-image: radial-gradient(73% 147%, #eadfdf 59%, #ece2df 100%),
+      radial-gradient(
+        91% 146%,
+        rgba(255, 255, 255, 0.5) 47%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+    background-blend-mode: screen;
   }
   #countdown {
     display: flex;

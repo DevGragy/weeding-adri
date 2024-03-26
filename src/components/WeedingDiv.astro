@@ -1,16 +1,29 @@
 ---
+import LocationButton from "./LocationButton.astro";
+
 interface Props {
   title: string;
-  body: string;
+  body?: string;
+  haveContent: boolean;
 }
 
-const { title, body } = Astro.props;
+const { title, body, haveContent } = Astro.props;
 ---
 
 <div class="container-half">
   <h3>{title}</h3>
   <h2><span>&#10084;</span></h2>
-  <p>{body}</p>
+  {
+    haveContent ? (
+      <p>{body}</p>
+    ) : (
+      <LocationButton
+        href="https://docs.google.com/forms/d/e/1FAIpQLSeO8lQyQRtUEUrVKrBa3bsVqOQYyIF6TiSBwC9RRM5vb2-V7A/viewform"
+        type="attendance"
+        content="Confirma tu asistencia"
+      />
+    )
+  }
 </div>
 
 <style>
@@ -23,7 +36,7 @@ const { title, body } = Astro.props;
     margin: 0 auto;
     padding: 120px 1rem;
     width: 100%;
-    font-family: "Arsenal", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 400;
   }
   .container-half h2 {
@@ -33,7 +46,6 @@ const { title, body } = Astro.props;
     line-height: 0.1em;
     margin: 10px 0 20px;
   }
-
   h2 span {
     background: #fff;
     padding: 0 10px;
